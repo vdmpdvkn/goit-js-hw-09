@@ -11,7 +11,7 @@ body {
   color: #212121;
   line-height: 1.5;
   transition: background-color 250ms ease-in;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #c0c0c0, #778899, #708090, #2f4f4f);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
@@ -77,6 +77,91 @@ iframe {
   border-radius: 15px;
   overflow: hidden;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 29px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 2px solid #212121;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+}
+.countdown-container {
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  align-items: center;
+}
+.datetime-picker {
+  width: 130px;
+  height: 30px;
+  border: 1px solid #212121;
+  outline: none;
+  transition: border-color 250ms ease-in, box-shadow 250ms ease-in;
+  font-size: 15px;
+}
+
+.datetime-picker:hover,
+.datetime-picker:focus {
+  border-color: black;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+button {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+button:disabled {
+  pointer-events: none;
+  cursor: none;
+  background-color: darkgrey;
+  border-color: grey;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -87,9 +172,4 @@ iframe {
   100% {
     background-position: 0% 50%;
   }
-}
-
-img {
-  display: block;
-  max-width: 100%;
 }
