@@ -19,7 +19,6 @@ const {
   hoursRef,
   minutesRef,
   secondsRef,
-  spanRefs,
 } = refs;
 
 let intervalId = null;
