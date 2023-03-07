@@ -49,8 +49,8 @@ function startCountDownOnBtnClick() {
   startCountDownBtnRef.setAttribute('disabled', 'true');
   const scheduledTime = new Date(inputDateRef.value);
   intervalId = setInterval(() => {
-    const diff = scheduledTime.getTime() - Date.now();
-    const countedTime = convertMs(diff);
+    const difference = scheduledTime.getTime() - Date.now();
+    const countedTime = convertMs(difference);
     const { days, hours, minutes, seconds } = countedTime;
 
     daysRef.textContent = days;
