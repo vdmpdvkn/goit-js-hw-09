@@ -107,17 +107,23 @@ img {
   gap: 25px;
   align-items: center;
 }
-.datetime-picker {
+.form {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+input {
   width: 130px;
   height: 30px;
   border: 1px solid #212121;
+  border-radius: 10px;
   outline: none;
   transition: border-color 250ms ease-in, box-shadow 250ms ease-in;
   font-size: 15px;
 }
 
-.datetime-picker:hover,
-.datetime-picker:focus {
+input:hover,
+input:focus {
   border-color: black;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
 }
