@@ -9,19 +9,23 @@ function submitHandler(evt) {
   let numberedDelay = Number(delay.value);
   let numberedStep = Number(step.value);
   const numberedAmount = Number(amount.value);
-  for (let i = 1; i <= numberedAmount; i += 1) {
-    createPromise(i, numberedDelay)
-      .then(({ position, delay }) => {
-        Notiflix.Notify.success(
-          `✅ Fulfilled promise ${position} in ${delay}ms`
-        );
-      })
-      .catch(({ position, delay }) => {
-        Notiflix.Notify.failure(
-          `❌ Rejected promise ${position} in ${delay}ms`
-        );
-      });
-    numberedDelay += numberedStep;
+  if (numberedAmount > 0 && numberedStep >= 0 && numberedDelay >= 0) {
+    for (let i = 1; i <= numberedAmount; i += 1) {
+      createPromise(i, numberedDelay)
+        .then(({ position, delay }) => {
+          Notiflix.Notify.success(
+            `✅ Fulfilled promise ${position} in ${delay}ms`
+          );
+        })
+        .catch(({ position, delay }) => {
+          Notiflix.Notify.failure(
+            `❌ Rejected promise ${position} in ${delay}ms`
+          );
+        });
+      numberedDelay += numberedStep;
+    }
+  } else {
+    Notiflix.Notify.warning('Please enter positive number');
   }
   evt.currentTarget.reset();
 }
